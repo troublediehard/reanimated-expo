@@ -5,6 +5,8 @@ import { Opacity } from './src/Opacity';
 import { TransitionLayout } from './src/transition/Transition'
 import UseTransitions from './src/transition/useTransitions'
 import LoadAssets from './src/components/LoadAssets';
+import DarkMode from './src/DarkMode';
+import Timing from './src/Timing';
 
 const fonts = {
   "SFProText-Bold": require("./assets/fonts/SF-Pro-Text-Bold.otf"),
@@ -17,10 +19,12 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
       <View style={styles.container}>
-        {/*<Loop />*/}
+        <Loop />
         {/*<Opacity />*/}
         {/*<TransitionLayout />*/}
-        <UseTransitions />
+        {/*<UseTransitions />*/}
+        {/*<DarkMode />*/}
+        {/*<Timing />*/}
       </View>
     </LoadAssets>
   );

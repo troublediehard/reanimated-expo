@@ -1,7 +1,6 @@
-import React, { useState, useMemo, useRef } from 'react';
-import { View, Image, Dimensions, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { Dimensions, StyleSheet } from 'react-native';
 import Animated, { Transition, Transitioning } from 'react-native-reanimated';
-import backImage from '../../assets/bg.jpg';
 import StyleGuide from './style';
 import { FlexibleCard, cards } from '../components/Card';
 import Selection from '../components/Selection';
@@ -10,20 +9,7 @@ const { height, width } = Dimensions.get('window');
 
 const {
   Value,
-  useCode,
-  set,
-  Clock,
-  block,
-  cond,
-  not,
-  clockRunning,
-  startClock,
-  stopClock,
-  add,
-  interpolate,
-  Extrapolate,
-  eq,
-  and,
+
 } = Animated;
 const duration = 2000;
 
