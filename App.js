@@ -7,6 +7,9 @@ import UseTransitions from './src/transition/useTransitions'
 import LoadAssets from './src/components/LoadAssets';
 import DarkMode from './src/DarkMode';
 import Timing from './src/Timing';
+import PanGesture from './src/PanGesture/PanGesture';
+import Decay from './src/Decay/Decay'
+import Spring from './src/Spring/Spring'
 
 const fonts = {
   "SFProText-Bold": require("./assets/fonts/SF-Pro-Text-Bold.otf"),
@@ -19,7 +22,9 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
       <View style={styles.container}>
-        <Loop />
+        <Spring />
+        {/*<PanGesture />*/}
+        {/*<Loop />*/}
         {/*<Opacity />*/}
         {/*<TransitionLayout />*/}
         {/*<UseTransitions />*/}

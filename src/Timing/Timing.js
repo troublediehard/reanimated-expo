@@ -19,7 +19,7 @@ const {
   and,
   not,
   eq,
-  timing
+  timing,
 } = Animated;
 
 const styles = StyleSheet.create({

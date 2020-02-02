@@ -14,8 +14,6 @@ const patternSize = {
 const widthCount = parseInt(Number(width / patternSize.width)) + 2;
 const viewWidth = widthCount * patternSize.width;
 
-console.warn(viewWidth, width)
-
 const {
   Value,
   Clock,
@@ -48,7 +46,11 @@ const runTiming = (clock) => {
   };
 
   return block([
-    timing(clock, state, config),
+    cond(
+      clockRunning(clock),
+      timing(clock, state, config),
+      set(state.time, 0)
+    ),
     cond(eq(state.finished, 1), [
       set(state.finished, 0),
       set(state.position, 0),
