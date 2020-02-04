@@ -10,6 +10,8 @@ import Timing from './src/Timing';
 import PanGesture from './src/PanGesture/PanGesture';
 import Decay from './src/Decay/Decay'
 import Spring from './src/Spring/Spring'
+import Swipe from './src/Swipe'
+import DynamicSpring from './src/DynamicSpring/DynamicSpring';
 
 const fonts = {
   "SFProText-Bold": require("./assets/fonts/SF-Pro-Text-Bold.otf"),
@@ -22,7 +24,9 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
       <View style={styles.container}>
-        <Spring />
+        <DynamicSpring />
+        {/*<Swipe />*/}
+        {/*<Spring />*/}
         {/*<PanGesture />*/}
         {/*<Loop />*/}
         {/*<Opacity />*/}
