@@ -12,6 +12,10 @@ import Decay from './src/Decay/Decay'
 import Spring from './src/Spring/Spring'
 import Swipe from './src/Swipe'
 import DynamicSpring from './src/DynamicSpring/DynamicSpring';
+import DragToSort from './src/DragToSort/DragToSort';
+import Svg from './src/Svg/Svg';
+import Trigonometry from './src/Trigonometry';
+
 
 const fonts = {
   "SFProText-Bold": require("./assets/fonts/SF-Pro-Text-Bold.otf"),
@@ -24,7 +28,10 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
       <View style={styles.container}>
-        <DynamicSpring />
+        <Trigonometry />
+        {/*<Svg />*/}
+        {/*<DragToSort />*/}
+        {/*<DynamicSpring />*/}
         {/*<Swipe />*/}
         {/*<Spring />*/}
         {/*<PanGesture />*/}
@@ -42,7 +49,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0ff',
+    // backgroundColor: '#0ff',
     // alignItems: 'center',
     // justifyContent: 'center',
   },
