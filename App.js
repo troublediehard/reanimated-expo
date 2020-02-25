@@ -16,6 +16,7 @@ import DragToSort from './src/DragToSort/DragToSort';
 import Svg from './src/Svg/Svg';
 import Trigonometry from './src/Trigonometry';
 import CircularSlider from './src/CircularProgress';
+import BezierCurves from './src/BezierCurves';
 
 
 const fonts = {
@@ -29,7 +30,8 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
       <View style={styles.container}>
-        <CircularSlider />
+        <BezierCurves />
+        {/*<CircularSlider />*/}
         {/*<Trigonometry />*/}
         {/*<Svg />*/}
         {/*<DragToSort />*/}

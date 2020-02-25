@@ -37,7 +37,7 @@ export default () => {
   const start = new Value(0);
   const end = new Value(0);
   const theta = sub(cond(lessThan(start, end), end, add(2 * PI, end)), start);
-  const rotate = sub(2* PI, start);
+  const rotate = sub(2 * PI, start);
 
   return (
     <View style={styles.container}>
