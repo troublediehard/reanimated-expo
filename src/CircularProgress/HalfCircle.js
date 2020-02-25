@@ -2,12 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import Animated from "react-native-reanimated";
 
-interface HalfCircleProps {
-  color: Animated.Node<number> | string;
-  r: number;
-}
-
-export default ({ color, r }: HalfCircleProps) => {
+export default ({ color, r }) => {
   return (
     <View
       style={{

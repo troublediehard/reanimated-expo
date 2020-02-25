@@ -8,15 +8,8 @@ import HalfCircle from "./HalfCircle";
 const { PI } = Math;
 const { lessThan, interpolate, Extrapolate } = Animated;
 
-interface CircularProgressProps {
-  theta: Animated.Node<number>;
-  r: number;
-  bg: string;
-  fg: Animated.Node<number>;
-  strokeWidth: number;
-}
 
-export default ({ theta, r, bg, fg, strokeWidth }: CircularProgressProps) => {
+export default ({ theta, r, bg, fg, strokeWidth }) => {
   const opacity = lessThan(theta, PI);
   const rotate = interpolate(theta, {
     inputRange: [PI, 2 * PI],

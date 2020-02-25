@@ -15,6 +15,7 @@ import DynamicSpring from './src/DynamicSpring/DynamicSpring';
 import DragToSort from './src/DragToSort/DragToSort';
 import Svg from './src/Svg/Svg';
 import Trigonometry from './src/Trigonometry';
+import CircularSlider from './src/CircularProgress';
 
 
 const fonts = {
@@ -28,7 +29,8 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
       <View style={styles.container}>
-        <Trigonometry />
+        <CircularSlider />
+        {/*<Trigonometry />*/}
         {/*<Svg />*/}
         {/*<DragToSort />*/}
         {/*<DynamicSpring />*/}

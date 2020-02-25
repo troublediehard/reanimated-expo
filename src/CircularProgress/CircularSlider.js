@@ -1,8 +1,12 @@
 import React from "react";
-import { Dimensions, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View, PixelRatio } from "react-native";
 
 import { StyleGuide } from "../components";
 import CircularProgress from "./CircularProgress";
+
+import Animated from 'react-native-reanimated';
+import Cursor from './Cursor';
+import CircularProgressSVG from './CircularProgressSVG';
 
 const { PI } = Math;
 const { width } = Dimensions.get("window");
@@ -21,17 +25,33 @@ const styles = StyleSheet.create({
   }
 });
 
+const {
+  Value,
+  sub,
+  cond,
+  lessThan,
+  add,
+} = Animated;
+
 export default () => {
+  const start = new Value(0);
+  const end = new Value(0);
+  const theta = sub(cond(lessThan(start, end), end, add(2 * PI, end)), start);
+  const rotate = sub(2* PI, start);
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <CircularProgress
-          bg={StyleGuide.palette.background}
-          fg={StyleGuide.palette.primary}
-          strokeWidth={STROKE_WIDTH}
-          theta={PI}
-          {...{ r }}
-        />
+        <Animated.View style={{ ...StyleSheet.absoluteFill, transform: [{ rotate }]}}>
+          <CircularProgressSVG
+            bg={StyleGuide.palette.background}
+            fg={StyleGuide.palette.primary}
+            strokeWidth={STROKE_WIDTH}
+            {...{ r, theta }}
+          />
+        </Animated.View>
+        <Cursor theta={start} size={STROKE_WIDTH} r={r - STROKE_WIDTH / 2} />
+        <Cursor theta={end} size={STROKE_WIDTH} r={r - STROKE_WIDTH / 2} />
       </View>
     </View>
   );
